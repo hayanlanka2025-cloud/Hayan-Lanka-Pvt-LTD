@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hayan Lanka Pvt Ltd — Your Vision, Our Expertise</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0e0e14;
+    --navy-mid: #16101f;
+    --navy-light: #22103a;
+    --gold: #b020b0;
+    --gold-light: #cc44cc;
+    --cream: #f5eef8;
+    --white: #ffffff;
+    --text-muted: #9e8aaf;
+    --border: rgba(176,32,176,0.22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(10,22,40,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    text-decoration: none;
+  }
+  .logo-svg { height: 38px; width: auto; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .l1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem; font-weight: 800;
+    color: var(--white); letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .logo-text .l2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem; font-weight: 800;
+    color: var(--gold); letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .logo-text .tagline {
+    font-size: 0.55rem; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em; margin-top: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 0.65rem 1.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 0 4rem;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,58,92,0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      linear-gradient(135deg, #0a1628 0%, #112240 50%, #0d1e35 100%);
+    z-index: 0;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+  .hero-globe {
+    position: absolute; right: -80px; top: 50%;
+    transform: translateY(-50%);
+    width: 650px; height: 650px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.12);
+    box-shadow:
+      0 0 80px rgba(201,168,76,0.06),
+      inset 0 0 80px rgba(26,58,92,0.4);
+    background: radial-gradient(circle at 35% 35%, rgba(26,58,92,0.8), rgba(10,22,40,0.9));
+    z-index: 0;
+    animation: rotateSlow 30s linear infinite;
+  }
+  .hero-globe::before {
+    content: '';
+    position: absolute; inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+  }
+  .hero-globe::after {
+    content: '';
+    position: absolute; inset: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.06);
+  }
+  @keyframes rotateSlow {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to   { transform: translateY(-50%) rotate(360deg); }
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 620px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300; line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text-muted); max-width: 440px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 1rem 2.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute;
+    inset: 0; background: rgba(255,255,255,0.15);
+    transform: translateX(-100%); transition: transform 0.3s;
+  }
+  .btn-primary:hover::after { transform: translateX(0); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 1rem 2.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats {
+    position: relative; z-index: 1;
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 500; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+
+  /* ── SEARCH BOX ── */
+  .search-section {
+    background: var(--navy-mid);
+    padding: 0 4rem 4rem;
+    position: relative; z-index: 10;
+  }
+  .search-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin-top: -2rem;
+  }
+  .search-tabs {
+    display: flex; gap: 0; margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    padding: 0.7rem 1.5rem;
+    background: none; border: none;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .tab:hover:not(.active) { color: var(--white); }
+  .search-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    gap: 1px;
+    background: var(--border);
+  }
+  .field {
+    background: var(--navy-mid);
+    padding: 1.2rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .field label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--gold);
+    font-weight: 600;
+  }
+  .field input, .field select {
+    background: none; border: none; outline: none;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 400;
+    padding: 0; width: 100%;
+  }
+  .field input::placeholder { color: var(--text-muted); }
+  .field select option { background: var(--navy-mid); }
+  .search-btn {
+    background: var(--gold); border: none;
+    padding: 0 2.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--navy); cursor: pointer;
+    transition: background 0.3s; white-space: nowrap;
+  }
+  .search-btn:hover { background: var(--gold-light); }
+
+  /* ── DESTINATIONS ── */
+  .section { padding: 5rem 4rem; }
+  .section-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 3rem;
+  }
+  .section-tag {
+    font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gold);
+    font-weight: 600; margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 400; line-height: 1.2;
+  }
+  .view-all {
+    font-size: 0.8rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--gold);
+    text-decoration: none; border-bottom: 1px solid var(--border);
+    padding-bottom: 2px; transition: border-color 0.3s;
+    white-space: nowrap;
+  }
+  .view-all:hover { border-color: var(--gold); }
+
+  .dest-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 1px;
+    background: var(--border);
+  }
+  .dest-card {
+    position: relative; overflow: hidden;
+    cursor: pointer;
+    background: var(--navy-light);
+  }
+  .dest-card:first-child { grid-row: 1 / 3; }
+  .dest-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.6);
+  }
+  .dest-card:hover .dest-img { transform: scale(1.06); filter: brightness(0.75); }
+  .dest-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, transparent 50%);
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.8rem;
+  }
+  .dest-badge {
+    display: inline-block;
+    background: var(--gold); color: var(--navy);
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; margin-bottom: 0.6rem;
+    align-self: flex-start;
+  }
+  .dest-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 500;
+    line-height: 1.1; margin-bottom: 0.3rem;
+  }
+  .dest-card:first-child .dest-name { font-size: 2.4rem; }
+  .dest-info { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+  .dest-price { font-size: 0.85rem; color: var(--gold); margin-top: 0.4rem; font-weight: 500; }
+
+  /* ── SERVICES ── */
+  .services-section {
+    background: var(--navy-mid);
+    padding: 5rem 4rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--navy-mid);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .service-card:hover { background: var(--navy-light); }
+  .service-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .service-card:hover .service-icon { border-color: var(--gold); }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  .service-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.75rem; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 1.2rem; text-decoration: none;
+    transition: gap 0.3s;
+  }
+  .service-link:hover { gap: 0.7rem; }
+
+  /* ── FEATURED DEAL ── */
+  .deal-section {
+    padding: 5rem 4rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .deal-visual {
+    position: relative;
+    height: 500px;
+  }
+  .deal-img-main {
+    width: 75%; height: 80%;
+    object-fit: cover; filter: brightness(0.7);
+    position: absolute; right: 0; bottom: 0;
+  }
+  .deal-img-inset {
+    width: 45%; height: 45%;
+    object-fit: cover; filter: brightness(0.8);
+    position: absolute; left: 0; top: 0;
+    border: 4px solid var(--navy);
+  }
+  .deal-tag-float {
+    position: absolute; left: 30%; top: 55%;
+    background: var(--gold); color: var(--navy);
+    padding: 0.7rem 1.2rem;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    z-index: 2;
+  }
+  .deal-content .section-tag { margin-bottom: 0.6rem; }
+  .deal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400; line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .deal-title em { font-style: italic; color: var(--gold); }
+  .deal-desc { color: var(--text-muted); line-height: 1.7; font-size: 0.9rem; margin-bottom: 2rem; }
+  .deal-features { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .deal-features li {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-size: 0.85rem; color: var(--white);
+  }
+  .deal-features li::before {
+    content: ''; width: 20px; height: 1px;
+    background: var(--gold); flex-shrink: 0;
+  }
+  .deal-price-row {
+    display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;
+  }
+  .deal-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 500; color: var(--gold);
+  }
+  .deal-price-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--navy-mid);
+    padding: 5rem 4rem;
+  }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border); margin-top: 3rem;
+  }
+  .testi-card {
+    background: var(--navy-mid);
+    padding: 2.5rem;
+  }
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1.2rem; }
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; line-height: 1.6;
+    color: var(--cream); margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 600; color: var(--gold);
+  }
+  .testi-name { font-size: 0.85rem; font-weight: 600; }
+  .testi-role { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    padding: 5rem 4rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .newsletter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 400; line-height: 1.2;
+  }
+  .newsletter-sub { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.8rem; line-height: 1.6; }
+  .newsletter-form { display: flex; gap: 0; }
+  .newsletter-input {
+    flex: 1; background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border); border-right: none;
+    padding: 1rem 1.5rem; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    outline: none;
+  }
+  .newsletter-input::placeholder { color: var(--text-muted); }
+  .newsletter-input:focus { border-color: var(--gold); }
+  .newsletter-btn {
+    background: var(--gold); color: var(--navy);
+    border: none; padding: 1rem 1.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.3s; white-space: nowrap;
+  }
+  .newsletter-btn:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060f1e;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+  .footer-brand .logo { margin-bottom: 1rem; display: block; }
+  .footer-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; max-width: 260px; }
+  .footer-col h4 {
+    font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--gold);
+    font-weight: 600; margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: 0.82rem; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; border-top: 1px solid var(--border);
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero, .search-section, .section, .services-section,
+    .testimonials, .newsletter, footer { padding-left: 2rem; padding-right: 2rem; }
+    .deal-section { padding: 3rem 2rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .dest-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; }
+    .dest-card:first-child { grid-row: auto; grid-column: 1 / 3; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 6rem 1.5rem 3rem; min-height: auto; padding-top: 100px; }
+    .hero-globe { display: none; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .search-section { padding: 0 1.5rem 3rem; }
+    .search-fields { grid-template-columns: 1fr 1fr; }
+    .search-fields .field:nth-child(3),
+    .search-fields .field:nth-child(4) { grid-column: span 1; }
+    .search-btn { grid-column: 1 / 3; padding: 1rem; }
+    .dest-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .dest-card { height: 240px; }
+    .dest-card:first-child { grid-column: auto; grid-row: auto; height: 300px; }
+    .deal-section { grid-template-columns: 1fr; gap: 2rem; }
+    .deal-visual { height: 300px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .newsletter { grid-template-columns: 1fr; gap: 2rem; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-btn { padding: 0.9rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+  /* ── VISA SECTION ── */
+  .visa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    margin-top: 3rem;
+  }
+  .visa-card {
+    background: var(--navy);
+    padding: 2.2rem 1.8rem;
+    display: flex; flex-direction: column;
+    transition: background 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .visa-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .visa-card:hover::before { transform: scaleX(1); }
+  .visa-card:hover { background: var(--navy-light); }
+  .visa-card--highlight {
+    background: linear-gradient(135deg, var(--navy-light), #2a0a3a);
+  }
+  .visa-card--highlight::before { transform: scaleX(1); }
+  .visa-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .visa-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--white); margin-bottom: 0.7rem;
+  }
+  .visa-desc {
+    font-size: 0.82rem; color: var(--text-muted);
+    line-height: 1.65; margin-bottom: 1.2rem; flex: 1;
+  }
+  .visa-features {
+    list-style: none; margin-bottom: 1.4rem;
+    display: flex; flex-direction: column; gap: 0.45rem;
+  }
+  .visa-features li {
+    font-size: 0.78rem; color: var(--white);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .visa-features li::before {
+    content: ''; width: 14px; height: 1px;
+    background: var(--gold); flex-shrink: 0;
+  }
+
+  /* ── CONTACT SECTION ── */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 3rem; margin-top: 3rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+  .contact-card {
+    background: var(--navy-mid);
+    padding: 1.6rem 1.8rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: background 0.3s;
+  }
+  .contact-card:hover { background: var(--navy-light); }
+  .contact-icon { font-size: 1.4rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .contact-label {
+    font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--gold);
+    font-weight: 600; margin-bottom: 0.4rem;
+  }
+  .contact-val {
+    display: block; font-size: 0.9rem; color: var(--white);
+    text-decoration: none; line-height: 1.6;
+    transition: color 0.3s;
+  }
+  .contact-val:hover { color: var(--gold); }
+  .whatsapp-link { color: #25d366 !important; }
+  .whatsapp-link:hover { color: #1da851 !important; }
+  .contact-form-wrap {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--gold); font-weight: 600;
+  }
+  .form-field input, .form-field select, .form-field textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    padding: 0.8rem 1rem; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    outline: none; transition: border-color 0.3s;
+    resize: vertical;
+  }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: var(--text-muted); }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold); }
+  .form-field select option { background: var(--navy-mid); }
+
+  @media (max-width: 1024px) {
+    .visa-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .visa-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form-wrap { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 64 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="3" width="7" height="30" fill="white" rx="1"/>
+      <rect x="19" y="3" width="7" height="30" fill="white" rx="1"/>
+      <rect x="2" y="15" width="24" height="6" fill="white" rx="1"/>
+      <rect x="33" y="3" width="7" height="30" fill="white" rx="1"/>
+      <path d="M5 37 Q32 52 62 8" stroke="#b020b0" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-text">
+      <span class="l1">HAYAN</span>
+      <span class="l2">LANKA</span>
+      <span class="tagline">Your Vision, Our Expertise</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Destinations</a></li>
+    <li><a href="#">Flights</a></li>
+    <li><a href="#">Hotels</a></li>
+    <li><a href="#">Packages</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <button class="nav-cta">Book Now</button>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-globe"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Sri Lanka's Premier Travel Company</div>
+    <h1>Discover the <em>Pearl</em><br/>of the Indian Ocean</h1>
+    <p class="hero-sub">Hayan Lanka Pvt Ltd crafts unforgettable travel experiences across Sri Lanka and the world. Flights, hotels, and bespoke tour packages — your vision, our expertise.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Explore Destinations</button>
+      <button class="btn-outline">View Packages</button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">120+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div>
+        <div class="stat-num">25K+</div>
+        <div class="stat-label">Happy Travellers</div>
+      </div>
+      <div>
+        <div class="stat-num">10yr</div>
+        <div class="stat-label">Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<div class="search-section">
+  <div class="search-box">
+    <div class="search-tabs">
+      <button class="tab active">✈ Flights</button>
+      <button class="tab">🏨 Hotels</button>
+      <button class="tab">📦 Packages</button>
+      <button class="tab">🚗 Car Rental</button>
+    </div>
+    <div class="search-fields">
+      <div class="field">
+        <label>From</label>
+        <input type="text" placeholder="Colombo (CMB)" />
+      </div>
+      <div class="field">
+        <label>To</label>
+        <input type="text" placeholder="Dubai (DXB)" />
+      </div>
+      <div class="field">
+        <label>Departure</label>
+        <input type="date" />
+      </div>
+      <div class="field">
+        <label>Passengers</label>
+        <select>
+          <option>1 Adult</option>
+          <option>2 Adults</option>
+          <option>Family (2+2)</option>
+          <option>Group (6+)</option>
+        </select>
+      </div>
+      <button class="search-btn">Search Flights</button>
+    </div>
+  </div>
+</div>
+
+<!-- DESTINATIONS -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Curated for You</div>
+      <h2 class="section-title">Trending<br/>Destinations</h2>
+    </div>
+    <a href="#" class="view-all">View All →</a>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="Dubai"/>
+      <div class="dest-overlay">
+        <span class="dest-badge">Trending</span>
+        <div class="dest-name">Dubai</div>
+        <div class="dest-info">UAE · 5 nights recommended</div>
+        <div class="dest-price">From ₹45,000 / person</div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80" alt="Maldives"/>
+      <div class="dest-overlay">
+        <span class="dest-badge">Luxury</span>
+        <div class="dest-name">Maldives</div>
+        <div class="dest-info">Island Resorts · 7 nights</div>
+        <div class="dest-price">From ₹85,000 / person</div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris"/>
+      <div class="dest-overlay">
+        <div class="dest-name">Paris</div>
+        <div class="dest-info">France · 6 nights</div>
+        <div class="dest-price">From ₹72,000 / person</div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo"/>
+      <div class="dest-overlay">
+        <span class="dest-badge">Hot Deal</span>
+        <div class="dest-name">Tokyo</div>
+        <div class="dest-info">Japan · 8 nights</div>
+        <div class="dest-price">From ₹90,000 / person</div>
+      </div>
+    </div>
+    <div class="dest-card">
+      <img class="dest-img" src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=600&q=80" alt="Bali"/>
+      <div class="dest-overlay">
+        <div class="dest-name">Bali</div>
+        <div class="dest-info">Indonesia · 5 nights</div>
+        <div class="dest-price">From ₹38,000 / person</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Complete Travel<br/>Solutions</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✈</div>
+      <div class="service-name">Flight Booking</div>
+      <div class="service-desc">Domestic & international flights with best fare guarantee and flexible date search.</div>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏨</div>
+      <div class="service-name">Hotel Stays</div>
+      <div class="service-desc">From boutique guesthouses to 5-star luxury resorts — over 500,000 properties worldwide.</div>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📦</div>
+      <div class="service-name">Tour Packages</div>
+      <div class="service-desc">All-inclusive curated packages with flights, hotels, transfers, and guided experiences.</div>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛡</div>
+      <div class="service-name">Travel Insurance</div>
+      <div class="service-desc">Comprehensive coverage for medical emergencies, cancellations, and lost baggage.</div>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DEAL -->
+<section class="deal-section">
+  <div class="deal-visual">
+    <img class="deal-img-main" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Switzerland"/>
+    <img class="deal-img-inset" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80" alt="Alps"/>
+    <div class="deal-tag-float">Limited Offer</div>
+  </div>
+  <div class="deal-content">
+    <div class="section-tag">Featured Package</div>
+    <h2 class="deal-title">Switzerland<br/><em>Alpine Escape</em></h2>
+    <p class="deal-desc">Experience the breathtaking Swiss Alps with our premium 7-night package. Includes luxury rail passes, guided glacier walks, and stays in iconic mountain chalets.</p>
+    <ul class="deal-features">
+      <li>Return flights from Chennai (MAA)</li>
+      <li>7 nights in 4-star alpine chalet</li>
+      <li>Swiss Travel Pass included</li>
+      <li>Guided Jungfraujoch day trip</li>
+      <li>Airport transfers & travel insurance</li>
+    </ul>
+    <div class="deal-price-row">
+      <div>
+        <div class="deal-price">₹1,25,000</div>
+        <div class="deal-price-sub">per person · twin sharing</div>
+      </div>
+    </div>
+    <button class="btn-primary">Book This Package</button>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">What Travellers Say</div>
+      <h2 class="section-title">Real Stories,<br/>Real Journeys</h2>
+    </div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Voyance made our honeymoon absolutely magical. Every detail was taken care of — from the airport lounge access to the private villa check-in."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Krishnamurthy</div>
+          <div class="testi-role">Maldives Honeymoon Package</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Best fare I found for my Dubai trip, and the 24/7 support team helped instantly when my connecting flight was delayed. Truly premium service."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rajesh Iyer</div>
+          <div class="testi-role">Dubai Business Trip</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"The Switzerland package was beyond our expectations. The rail pass, the glacier trek, the chalet — it felt like we were in a movie. Will book again!"</div>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Ananya & Vikram</div>
+          <div class="testi-role">Switzerland Alpine Package</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISA SECTION -->
+<section class="section" style="background:var(--navy-mid);">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Hassle-Free Processing</div>
+      <h2 class="section-title">Visa <em style="font-style:italic;color:var(--gold);">Services</em></h2>
+    </div>
+  </div>
+  <div class="visa-grid">
+
+    <div class="visa-card">
+      <div class="visa-icon">🏖️</div>
+      <div class="visa-type">Tourist Visa</div>
+      <div class="visa-desc">Planning a holiday? We handle your tourist visa application end-to-end — documentation, submission, and follow-up — for 50+ countries.</div>
+      <ul class="visa-features">
+        <li>Document checklist provided</li>
+        <li>Application submission support</li>
+        <li>Fast-track processing available</li>
+        <li>50+ country coverage</li>
+      </ul>
+      <a href="#contact" class="service-link">Apply Now →</a>
+    </div>
+
+    <div class="visa-card">
+      <div class="visa-icon">💼</div>
+      <div class="visa-type">Business Visa</div>
+      <div class="visa-desc">Travelling for work? Our team ensures your business visa is processed swiftly with all required commercial documentation in order.</div>
+      <ul class="visa-features">
+        <li>Invitation letter assistance</li>
+        <li>Commercial document support</li>
+        <li>Multi-entry visa options</li>
+        <li>Priority processing</li>
+      </ul>
+      <a href="#contact" class="service-link">Apply Now →</a>
+    </div>
+
+    <div class="visa-card">
+      <div class="visa-icon">🎓</div>
+      <div class="visa-type">Student Visa</div>
+      <div class="visa-desc">Heading abroad for studies? We guide you through every step of the student visa process — from admission letters to embassy appointments.</div>
+      <ul class="visa-features">
+        <li>University admission support</li>
+        <li>Financial statement guidance</li>
+        <li>Embassy interview coaching</li>
+        <li>Full documentation review</li>
+      </ul>
+      <a href="#contact" class="service-link">Apply Now →</a>
+    </div>
+
+    <div class="visa-card visa-card--highlight">
+      <div class="visa-icon">🌐</div>
+      <div class="visa-type">All Visa Types</div>
+      <div class="visa-desc">Transit, spouse, family reunion, work permit — whatever your visa need, Hayan Lanka Pvt Ltd has the expertise to get it done right.</div>
+      <ul class="visa-features">
+        <li>Transit & stopover visas</li>
+        <li>Family & spouse visas</li>
+        <li>Work permit assistance</li>
+        <li>Visa renewal support</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contact" style="background:var(--navy);">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact <em style="font-style:italic;color:var(--gold);">Hayan Lanka</em></h2>
+    </div>
+  </div>
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <a href="tel:+94770242825" class="contact-val">+94 77 024 2825</a>
+          <a href="tel:+94701024704" class="contact-val">+94 70 102 4704</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <a href="https://wa.me/94701024704" target="_blank" class="contact-val whatsapp-link">+94 70 102 4704</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <a href="mailto:hayanlanka2025@gmail.com" class="contact-val">hayanlanka2025@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-val">Hidayatha Nager,<br/>Madurankuliya, Puttalam,<br/>Sri Lanka</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="section-tag" style="margin-bottom:1rem;">Send Us a Message</div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Mohamed Hayan" />
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+94 77 000 0000" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" />
+        </div>
+        <div class="form-field">
+          <label>Service Required</label>
+          <select>
+            <option>Flight Booking</option>
+            <option>Hotel Booking</option>
+            <option>Tour Package</option>
+            <option>Tourist Visa</option>
+            <option>Business Visa</option>
+            <option>Student Visa</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Tell us about your travel plans..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div>
+    <h2 class="newsletter-title">Get Exclusive Deals<br/>& Travel Inspiration</h2>
+    <p class="newsletter-sub">Join thousands of travellers who receive our curated deals, destination guides, and early-bird offers every week.</p>
+  </div>
+  <div>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="Enter your email address" />
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+    <p style="font-size:0.72rem; color:var(--text-muted); margin-top:0.8rem;">No spam. Unsubscribe anytime. We respect your privacy.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:1rem;">
+        <svg class="logo-svg" viewBox="0 0 64 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="7" height="30" fill="white" rx="1"/>
+          <rect x="19" y="3" width="7" height="30" fill="white" rx="1"/>
+          <rect x="2" y="15" width="24" height="6" fill="white" rx="1"/>
+          <rect x="33" y="3" width="7" height="30" fill="white" rx="1"/>
+          <path d="M5 37 Q32 52 62 8" stroke="#b020b0" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text">
+          <span class="l1">HAYAN</span>
+          <span class="l2">LANKA</span>
+          <span class="tagline">Your Vision, Our Expertise</span>
+        </div>
+      </div>
+      <p class="footer-desc">Hayan Lanka Pvt Ltd — Sri Lanka's trusted travel partner for flights, hotels, tour packages, and visa services.</p>
+      <div style="margin-top:1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
+        <a href="tel:+94770242825" style="color:var(--text-muted);font-size:0.8rem;text-decoration:none;">📞 +94 77 024 2825</a>
+        <a href="tel:+94701024704" style="color:var(--text-muted);font-size:0.8rem;text-decoration:none;">📞 +94 70 102 4704</a>
+        <a href="mailto:hayanlanka2025@gmail.com" style="color:var(--text-muted);font-size:0.8rem;text-decoration:none;">✉ hayanlanka2025@gmail.com</a>
+        <span style="color:var(--text-muted);font-size:0.8rem;">📍 Madurankuliya, Puttalam, Sri Lanka</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Hotels</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Car Rental</a></li>
+        <li><a href="#">Activities</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visa Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">Tourist Visa</a></li>
+        <li><a href="#">Business Visa</a></li>
+        <li><a href="#">Student Visa</a></li>
+        <li><a href="#">Work Permit</a></li>
+        <li><a href="#">Transit Visa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul class="footer-links">
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Visa Guide</a></li>
+        <li><a href="#">Travel Insurance</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hayan Lanka Pvt Ltd. All rights reserved. | Madurankuliya, Puttalam, Sri Lanka</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const labels = {'✈ Flights':'Search Flights','🏨 Hotels':'Search Hotels','📦 Packages':'Search Packages','🚗 Car Rental':'Search Cars'};
+      const btn = document.querySelector('.search-btn');
+      if(btn) btn.textContent = labels[tab.textContent] || 'Search';
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.style.opacity = 1;
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.dest-card, .service-card, .testi-card, .visa-card, .contact-card').forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
